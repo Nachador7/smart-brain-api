@@ -41,6 +41,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => {
+  bcrypt.compare("bacon", hash, function(err, res) {
+  
+  });
+  bcrypt.compare("veggies", hash, function(err, res) {
+    
+  });
   if(req.body.email === database.users[0].email && 
     req.body.password === database.users[0].password){
     res.json('success');
@@ -100,12 +106,7 @@ bcrypt.hash("bacon", null, null, function(err, hash) {
 });
 
 
-// bcrypt.compare("bacon", hash, function(err, res) {
-  
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-  
-// });
+
 
 app.listen(3000, () => {
   console.log('Server is listening on port 3000');
