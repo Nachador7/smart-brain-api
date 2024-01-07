@@ -12,12 +12,12 @@ const image = require('./Controlers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString: "postgres://smart_brain_2nai_user:B6FLovEMfql6eOTGAUsTBIMMUMD449SU@dpg-cmdfojg21fec73d3606g-a/smart_brain_2nai",
-    host : 'dpg-cmdfojg21fec73d3606g-a',
+    connectionString: process.env.DATABASE_URL,
+    host : process.env.DATABASE_HOST,
     port : 5432,
-    user : 'smart_brain_2nai_user',
-    password : 'B6FLovEMfql6eOTGAUsTBIMMUMD449SU',
-    database : 'smart_brain_2nai',
+    user : process.env.DATABASE_USER,
+    password : process.env.DATABASE_PW,
+    database : process.env.DATABASE_DB,
     ssl: { rejectUnauthorized: false }
   }
 });
