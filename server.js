@@ -74,7 +74,7 @@ app.post('/clarifai', async (req, res) => {
 
 
 
-const PORT = 3000
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
